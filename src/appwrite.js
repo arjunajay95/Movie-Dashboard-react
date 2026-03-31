@@ -8,6 +8,7 @@ const client = new Client().setEndpoint("https://fra.cloud.appwrite.io/v1").setP
 
 const tablesDB = new TablesDB(client);
 
+// Function to update search count in the DB
 export const updateSearchCount = async (searchTerm, movie) => {
   // Use Appwrite SDK to check if the search term exists in the database
   try {
@@ -27,6 +28,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
   }
 };
 
+// Function to fetch Trending movies from the DB
 export const getTrendingMovies = async () => {
   try {
     const result = await tablesDB.listRows(DATABASE_ID, COLLECTION_ID, [Query.limit(5), Query.orderDesc("count")]);
