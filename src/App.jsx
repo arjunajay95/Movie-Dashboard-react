@@ -148,7 +148,9 @@ function App() {
               {trendingMovies.map((movie, index) => (
                 <li key={movie.$id}>
                   <p>{index + 1}</p>
-                  <img src={movie.poster_url} alt={movie.title} />
+                  <div className="img-wrapper">
+                    <img src={movie.poster_url} alt={movie.title} />
+                  </div>
                 </li>
               ))}
             </ul>
